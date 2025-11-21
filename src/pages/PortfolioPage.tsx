@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Code, Zap, Bot, MessageSquare, Brain, Video, Palette, Maximize2, X } from 'lucide-react';
+import { Search, Code, Zap, Bot, MessageSquare, Brain, Video, Palette, Maximize2, X, ArrowRight } from 'lucide-react';
 import content from '../data/content.json';
 
 const PortfolioPage = () => {
@@ -136,7 +137,15 @@ const PortfolioPage = () => {
                                         )}
                                     </div>
 
-
+                                    <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                                        <Link
+                                            to={`/portfolio/${project.id}`}
+                                            className="text-sm font-bold text-accent hover:text-white transition-colors flex items-center gap-2"
+                                        >
+                                            View Case Study
+                                            <ArrowRight className="w-4 h-4" />
+                                        </Link>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

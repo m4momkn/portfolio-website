@@ -85,7 +85,7 @@ const PortfolioPage = () => {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
                                 key={project.id}
-                                className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all hover:-translate-y-1"
+                                className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/30 transition-all hover:-translate-y-1 flex flex-col h-full"
                             >
                                 {/* Project Image */}
                                 <div className="h-48 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
@@ -116,10 +116,12 @@ const PortfolioPage = () => {
                                     )}
                                 </div>
 
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
-                                        {project.title}
-                                    </h3>
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <Link to={`/portfolio/${project.id}`} className="block group-hover:text-accent transition-colors">
+                                        <h3 className="text-xl font-bold text-white mb-2">
+                                            {project.title}
+                                        </h3>
+                                    </Link>
                                     <p className="text-gray-400 text-sm mb-4">
                                         {project.description}
                                     </p>
@@ -137,7 +139,7 @@ const PortfolioPage = () => {
                                         )}
                                     </div>
 
-                                    <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                                    <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                                         <Link
                                             to={`/portfolio/${project.id}`}
                                             className="text-sm font-bold text-accent hover:text-white transition-colors flex items-center gap-2"

@@ -123,18 +123,45 @@
         {
             "id": "whatsapp-chatbot",
             "title": "AI-Powered WhatsApp Chatbot",
+            "subtitle": "A fully automated conversational AI system that handles customer queries, support, and engagement directly on WhatsApp.",
             "category": "Chatbots & Agents",
-            "description": "A conversational WhatsApp bot capable of answering questions, capturing leads, sending files, and executing business workflows. Built on n8n with custom AI prompts and dynamic memory.",
+            "description": "This chatbot leverages AI to interact with customers on WhatsApp in real time. It understands user messages, provides instant responses, and automates customer support workflows. The system reduces manual intervention, improves response times, and maintains consistent communication across all inquiries.",
             "tech": [
-                "n8n",
+                "AI NLP Engine",
                 "WhatsApp API",
-                "AI Models"
+                "Automation Logic"
+            ],
+            "challenge": [
+                "Responding to customer queries manually was slow",
+                "High volume of messages caused delayed support",
+                "No automated way to handle FAQs and routine questions",
+                "Maintaining personalized responses at scale was difficult",
+                "Manual tracking of conversations and follow-ups was error-prone"
+            ],
+            "solution": [
+                "Customer sends a message via WhatsApp",
+                "AI NLP Engine interprets the intent and context",
+                "Automation Logic triggers appropriate response or action",
+                "WhatsApp API sends the reply to the customer",
+                "Optional steps include follow-up reminders, escalation to human agents, and conversation analytics"
             ],
             "results": [
-                "24/7 Customer support",
-                "Automated lead capture",
-                "File handling"
+                "Instant customer responses 24/7",
+                "Reduced manual workload for support staff",
+                "Improved customer satisfaction and engagement",
+                "Automated tracking and analytics of all conversations"
             ],
+            "workflowDiagram": [
+                "Customer Message",
+                "AI NLP Engine",
+                "Automation Logic",
+                "WhatsApp API Response",
+                "Conversation Logged"
+            ],
+            "cta": {
+                "text": "Want to automate your customer support and engagement on WhatsApp? Let’s build your chatbot.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/whatsapp-chatbot.png"
         },
         {

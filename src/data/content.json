@@ -140,18 +140,45 @@
         {
             "id": "calendar-agent",
             "title": "AI Calendar Agent & Virtual Receptionist",
+            "subtitle": "A fully automated assistant that manages scheduling, booking, and client interactions using AI-driven logic and calendar integration.",
             "category": "AI Agents",
-            "description": "A smart scheduling bot that manages appointments, handles customer interactions, suggests optimal times, and acts as a virtual receptionist—automatically booking, rescheduling, and reminding users.",
+            "description": "This automation system handles client appointments, calendar management, and virtual reception tasks. AI agents interact with clients, schedule meetings, and send reminders while maintaining a seamless, professional workflow. The goal was to reduce manual scheduling and streamline client communication from inquiry to confirmation.",
             "tech": [
-                "n8n",
-                "AI Scheduling",
-                "Calendar APIs"
+                "AI Agent",
+                "Calendar API",
+                "Automation Logic"
+            ],
+            "challenge": [
+                "Manual appointment scheduling was time-consuming",
+                "High risk of double-bookings and missed meetings",
+                "Managing multiple calendars across team members was difficult",
+                "No automated follow-ups or reminders for clients",
+                "Human reception required constant attention, even outside business hours"
+            ],
+            "solution": [
+                "Client submits appointment request via email or form",
+                "AI agent interprets request and checks availability",
+                "Calendar API schedules meeting and avoids conflicts",
+                "Automated confirmation emails and reminders sent to clients",
+                "Optional steps include follow-ups, rescheduling, and multi-platform notifications"
             ],
             "results": [
-                "Automated booking",
-                "Smart rescheduling",
-                "Reduced no-shows"
+                "Appointments scheduled automatically without manual intervention",
+                "Significant reduction in double-bookings",
+                "Improved client communication and satisfaction",
+                "24/7 virtual receptionist capabilities"
             ],
+            "workflowDiagram": [
+                "Client Request",
+                "AI Agent Processing",
+                "Calendar API Scheduling",
+                "Confirmation & Reminders",
+                "Completed Appointment"
+            ],
+            "cta": {
+                "text": "Want a virtual assistant to handle your scheduling and client interactions? Let’s set it up.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/calendar-agent.png"
         },
         {

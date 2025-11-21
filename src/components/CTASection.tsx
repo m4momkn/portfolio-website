@@ -1,6 +1,7 @@
 
 import { ArrowRight, Mail } from 'lucide-react';
 import content from '../data/content.json';
+import { useEmailFallback } from '../hooks/useEmailFallback';
 
 const CTASection = () => {
     return (
@@ -28,16 +29,31 @@ const CTASection = () => {
                         Schedule Your Free Consultation
                         <ArrowRight size={20} />
                     </a>
-                    <a
-                        href={`mailto:${content.personal.email}`}
-                        className="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-xl hover:bg-white/10 transition-all flex items-center gap-2"
-                    >
-                        <Mail size={20} />
-                        Email me directly
-                    </a>
+                    <EmailButton email={content.personal.email} />
                 </div>
             </div>
         </section>
+    );
+};
+
+const EmailButton = ({ email }: { email: string }) => {
+    const { showEmail, copied, handleEmailClick } = useEmailFallback(email);
+
+    return (
+        <a
+            href={`mailto:${email}`}
+            onClick={handleEmailClick}
+            className="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-xl hover:bg-white/10 transition-all flex items-center gap-2 min-w-[200px] justify-center"
+        >
+            <Mail size={20} />
+            {showEmail ? (
+                <span className="text-sm">
+                    {copied ? 'Copied to clipboard!' : email}
+                </span>
+            ) : (
+                'Email me directly'
+            )}
+        </a>
     );
 };
 

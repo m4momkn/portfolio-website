@@ -2,6 +2,21 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Calendar, CheckCircle, Loader2 } from 'lucide-react';
 import content from '../data/content.json';
+import { useEmailFallback } from '../hooks/useEmailFallback';
+
+const ContactEmailLink = ({ email }: { email: string }) => {
+    const { showEmail, copied, handleEmailClick } = useEmailFallback(email);
+
+    return (
+        <a
+            href={`mailto:${email}`}
+            onClick={handleEmailClick}
+            className="text-gray-400 hover:text-accent transition-colors block"
+        >
+            {showEmail ? (copied ? 'Copied to clipboard!' : email) : email}
+        </a>
+    );
+};
 
 const ContactPage = () => {
     const [formState, setFormState] = useState({
@@ -64,9 +79,7 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-white font-medium mb-1">Email</h3>
-                                    <a href={`mailto:${content.personal.email}`} className="text-gray-400 hover:text-accent transition-colors">
-                                        {content.personal.email}
-                                    </a>
+                                    <ContactEmailLink email={content.personal.email} />
                                 </div>
                             </div>
 

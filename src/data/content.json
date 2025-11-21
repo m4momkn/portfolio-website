@@ -1,0 +1,264 @@
+{
+    "personal": {
+        "name": "Mahmoud Elkady",
+        "role": "AI Automation & Integration Engineer",
+        "tagline": "I build intelligent automation systems that run your business for you.",
+        "email": "mahmoudallkadyy@gmail.com",
+        "location": "Cairo, Egypt (Serving Globally)",
+        "social": {}
+    },
+    "hero": {
+        "stats": [
+            {
+                "label": "Workflows Built",
+                "value": "200+"
+            },
+            {
+                "label": "Hours Saved",
+                "value": "5000+"
+            },
+            {
+                "label": "Happy Clients",
+                "value": "50+"
+            }
+        ]
+    },
+    "services": [
+        {
+            "id": "end-to-end-automation",
+            "title": "End-to-End AI Automation",
+            "description": "Complete business process automation using n8n, Make.com, and custom scripts.",
+            "icon": "Workflow",
+            "features": [
+                "Process Mapping",
+                "Custom Workflows",
+                "Error Handling",
+                "Maintenance"
+            ]
+        },
+        {
+            "id": "ai-integration",
+            "title": "AI & CRM Integration",
+            "description": "Seamlessly connect AI models with your CRM, databases, and internal tools.",
+            "icon": "Link",
+            "features": [
+                "CRM Sync",
+                "API Integration",
+                "Custom Webhooks",
+                "Data Enrichment"
+            ]
+        },
+        {
+            "id": "custom-agents",
+            "title": "Custom AI Agents",
+            "description": "Build autonomous agents that handle customer support, lead gen, and more.",
+            "icon": "Bot",
+            "features": [
+                "RAG Systems",
+                "Chatbots",
+                "Task Agents",
+                "Multi-Agent Systems"
+            ]
+        },
+        {
+            "id": "image-pipelines",
+            "title": "Image Generation Pipelines",
+            "description": "Automated workflows for generating product images, marketing assets, and more.",
+            "icon": "Image",
+            "features": [
+                "Stable Diffusion",
+                "Midjourney API",
+                "Product Mockups",
+                "Batch Processing"
+            ]
+        },
+        {
+            "id": "dashboards",
+            "title": "Automation Dashboards",
+            "description": "Custom internal tools and dashboards to monitor your automated operations.",
+            "icon": "LayoutDashboard",
+            "features": [
+                "Real-time Metrics",
+                "Control Panels",
+                "Error Logs",
+                "Performance Tracking"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": "lead-assignment",
+            "title": "Automated Lead Assignment & Sales Notifications Workflow",
+            "category": "Business Automation",
+            "description": "A fully automated pipeline that routes inbound leads to the correct sales representative based on rules, triggers instant Slack notifications, and logs all activity in HubSpot—removing manual work and speeding up response time.",
+            "tech": [
+                "HubSpot",
+                "Slack",
+                "n8n"
+            ],
+            "results": [
+                "Instant lead routing",
+                "Zero manual data entry",
+                "Faster response times"
+            ],
+            "image": "/images/lead-assignment.png"
+        },
+        {
+            "id": "youtube-automation",
+            "title": "AI-Powered YouTube Video Summarization & Analysis",
+            "category": "AI Automation",
+            "description": "An automated system that fetches YouTube videos, extracts or auto-generates transcripts, and produces structured summaries, key insights, topic breakdowns, tags, and viewer action points. The workflow can also generate SEO descriptions, titles, and chapter markers—helping creators, agencies, and teams process and repurpose long-form content instantly.",
+            "tech": [
+                "n8n",
+                "AI LLMs",
+                "YouTube API"
+            ],
+            "results": [
+                "Automated comment replies",
+                "Script generation",
+                "Deep content analysis"
+            ],
+            "image": "/images/youtube-summarization.png"
+        },
+        {
+            "id": "whatsapp-chatbot",
+            "title": "AI-Powered WhatsApp Chatbot",
+            "category": "Chatbots & Agents",
+            "description": "A conversational WhatsApp bot capable of answering questions, capturing leads, sending files, and executing business workflows. Built on n8n with custom AI prompts and dynamic memory.",
+            "tech": [
+                "n8n",
+                "WhatsApp API",
+                "AI Models"
+            ],
+            "results": [
+                "24/7 Customer support",
+                "Automated lead capture",
+                "File handling"
+            ],
+            "image": "/images/whatsapp-chatbot.png"
+        },
+        {
+            "id": "calendar-agent",
+            "title": "AI Calendar Agent & Virtual Receptionist",
+            "category": "AI Agents",
+            "description": "A smart scheduling bot that manages appointments, handles customer interactions, suggests optimal times, and acts as a virtual receptionist—automatically booking, rescheduling, and reminding users.",
+            "tech": [
+                "n8n",
+                "AI Scheduling",
+                "Calendar APIs"
+            ],
+            "results": [
+                "Automated booking",
+                "Smart rescheduling",
+                "Reduced no-shows"
+            ],
+            "image": "/images/calendar-agent.png"
+        },
+        {
+            "id": "video-automation",
+            "title": "AI Long-Form Video Content Automation",
+            "category": "Content Automation",
+            "description": "A system that transforms images or short inputs into long-form AI-generated video content. Uses FAL and KIE pipelines integrated with n8n for automated rendering, editing, and publishing.",
+            "tech": [
+                "n8n",
+                "FAL",
+                "KIE"
+            ],
+            "results": [
+                "Automated video creation",
+                "Scalable content production",
+                "High-quality rendering"
+            ],
+            "image": "/images/video-automation.png"
+        },
+        {
+            "id": "flyer-automation",
+            "title": "Automated Flyer Creation System",
+            "category": "Creative Automation",
+            "description": "A workflow that automatically generates branded business flyers from CRM data. APITemplate handles design, n8n orchestrates the logic, and HubSpot provides structured content—turning hours of design work into seconds.",
+            "tech": [
+                "APITemplate",
+                "HubSpot",
+                "n8n"
+            ],
+            "results": [
+                "Instant design generation",
+                "Brand consistency",
+                "Data-driven designs"
+            ],
+            "image": "/images/flyer-automation.png"
+        },
+        {
+            "id": "security-docs-automation",
+            "title": "Automated Employee Security Documentation System",
+            "category": "Desktop Automation",
+            "description": "A desktop application that processes complex Excel datasets to automatically generate employee security passes, legal undertakings, and compliance reports. The custom automation engine removes manual work, ensures 100% data accuracy, and accelerates the entire document-issuance workflow.",
+            "tech": [
+                "Python",
+                "Desktop App",
+                "Excel Automation"
+            ],
+            "results": [
+                "100% data accuracy",
+                "Accelerated issuance",
+                "Automated document synthesis"
+            ],
+            "image": "/images/security-docs-automation.png"
+        }
+    ],
+    "about": {
+        "story": "I'm Mahmoud Alkady, an AI Automation & Integration Engineer. I specialize in building intelligent systems that do the heavy lifting for you. From custom AI agents to complex n8n workflows, I turn manual chaos into automated precision.",
+        "expertise": [
+            {
+                "category": "Automation Systems",
+                "items": [
+                    "n8n",
+                    "Make.com",
+                    "Zapier",
+                    "Custom Scripting",
+                    "Multi-Step Workflow Design"
+                ],
+                "icon": "Zap"
+            },
+            {
+                "category": "AI Models & Agents",
+                "items": [
+                    "OpenAI",
+                    "Claude",
+                    "Llama",
+                    "Stable Diffusion",
+                    "Vision Models",
+                    "Custom AI Agent Development"
+                ],
+                "icon": "Brain"
+            },
+            {
+                "category": "Data & Integrations",
+                "items": [
+                    "API Orchestration",
+                    "Webhooks",
+                    "JSON Pipelines",
+                    "Data Transformation",
+                    "Automation Logic"
+                ],
+                "icon": "Database"
+            },
+            {
+                "category": "CRM & Business Systems",
+                "items": [
+                    "HubSpot",
+                    "Odoo",
+                    "Zoho",
+                    "WhatsApp API",
+                    "Slack",
+                    "Google Workspace Integrations"
+                ],
+                "icon": "Briefcase"
+            }
+        ]
+    },
+    "contact": {
+        "formEndpoint": "",
+        "bookingUrl": "https://calendly.com/m4momkn/30min"
+    }
+}

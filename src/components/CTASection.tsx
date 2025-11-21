@@ -1,5 +1,6 @@
 
 import { ArrowRight, Mail } from 'lucide-react';
+import content from '../data/content.json';
 
 const CTASection = () => {
     return (
@@ -19,14 +20,16 @@ const CTASection = () => {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                     <a
-                        href="#contact"
+                        href={content.contact.bookingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-8 py-4 bg-accent text-background font-bold rounded-xl hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] flex items-center gap-2"
                     >
                         Schedule Your Free Consultation
                         <ArrowRight size={20} />
                     </a>
                     <a
-                        href="mailto:hello@mahmoudelkady.com"
+                        href={`mailto:${content.personal.email}`}
                         className="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-xl hover:bg-white/10 transition-all flex items-center gap-2"
                     >
                         <Mail size={20} />

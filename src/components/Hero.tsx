@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import content from '../data/content.json';
@@ -80,13 +81,13 @@ const Hero = () => {
                         transition={{ duration: 0.5, delay: 0.6 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        <a
-                            href="#portfolio"
+                        <Link
+                            to="/portfolio"
                             className="px-8 py-4 bg-accent text-background font-bold rounded-xl hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] flex items-center gap-2 group"
                         >
                             View My Work
                             <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
                         <a
                             href={content.contact.bookingUrl}
                             target="_blank"

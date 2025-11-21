@@ -40,13 +40,13 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <a
+                            <Link
                                 key={link.name}
-                                href={link.href}
+                                to={link.href}
                                 className="text-text hover:text-accent transition-colors text-sm font-medium"
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         ))}
                         <a
                             href={content.contact.bookingUrl}
@@ -73,14 +73,14 @@ const Navbar = () => {
                 <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-xl border-b border-white/10 p-4">
                     <div className="flex flex-col space-y-4">
                         {navLinks.map((link) => (
-                            <a
+                            <Link
                                 key={link.name}
-                                href={link.href}
+                                to={link.href}
                                 className="text-text hover:text-accent py-2 block"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         ))}
                         <a
                             href={content.contact.bookingUrl}

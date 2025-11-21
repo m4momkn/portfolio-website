@@ -1,33 +1,18 @@
-
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, TrendingUp, AlertCircle, Layers } from 'lucide-react';
+import { useParams, Link, Navigate } from 'react-router-dom';
+import { ArrowLeft, TrendingUp, AlertCircle, Layers, CheckCircle, ArrowRight, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
+import content from '../data/content.json';
 
 const CaseStudyPage = () => {
     const { id } = useParams();
-    console.log(id); // Use id to avoid lint error
+    const project = content.projects.find(p => p.id === id);
 
-    // In a real app, you'd fetch data based on ID. For now, we'll use static data for a demo.
-    const project = {
-        title: "E-commerce Order Fulfillment Automation",
-        client: "Mid-sized E-commerce Retailer",
-        industry: "Retail / E-commerce",
-        challenge: "Processing 200+ daily orders manually across Shopify, inventory system, and fulfillment center was taking 3 hours daily and causing frequent errors in shipping.",
-        solution: "Built comprehensive n8n workflow connecting Shopify webhook → inventory check → fulfillment center API → customer notification → accounting sync.",
-        results: [
-            { label: "Time Saved", value: "90%", desc: "From 3 hours to 15 mins daily" },
-            { label: "Error Rate", value: "0.1%", desc: "Reduced from 5%" },
-            { label: "ROI", value: "2 Mo", desc: "Payback period" }
-        ],
-        tech: ["n8n", "Shopify", "Google Sheets", "ShipStation", "QuickBooks", "Slack"],
-        workflowSteps: [
-            "Shopify Webhook triggers on new order",
-            "Check inventory in Google Sheets/Database",
-            "Send order to ShipStation API",
-            "Update Shopify status & notify customer",
-            "Sync transaction to QuickBooks",
-            "Send summary alert to Slack"
-        ]
-    };
+    if (!project) {
+        return <Navigate to="/portfolio" replace />;
+    }
+
+    // Cast to any to access new fields without strict type checking for now
+    const p = project as any;
 
     return (
         <div className="pt-24 pb-20 bg-background min-h-screen">
@@ -37,92 +22,145 @@ const CaseStudyPage = () => {
                 </Link>
 
                 <div className="max-w-4xl mx-auto">
-                    {/* Header */}
-                    <div className="mb-12">
-                        <div className="flex items-center gap-4 mb-4">
+                    {/* 1. HERO SECTION */}
+                    <div className="mb-16 text-center md:text-left">
+                        <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
                             <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/20">
-                                {project.industry}
-                            </span>
-                            <span className="text-gray-400 text-sm">
-                                Client: {project.client}
+                                {p.category}
                             </span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                            {project.title}
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                            {p.title}
                         </h1>
+                        {p.subtitle && (
+                            <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
+                                {p.subtitle}
+                            </p>
+                        )}
                     </div>
 
-                    {/* Results Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                        {project.results.map((res, i) => (
-                            <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-xl">
-                                <div className="text-3xl font-bold text-white mb-1">{res.value}</div>
-                                <div className="text-accent font-medium mb-2">{res.label}</div>
-                                <div className="text-sm text-gray-400">{res.desc}</div>
-                            </div>
-                        ))}
-                    </div>
+                    {/* 2. PROJECT OVERVIEW */}
+                    <section className="mb-20">
+                        <h2 className="text-2xl font-bold text-white mb-6">Project Overview</h2>
+                        <p className="text-gray-300 text-lg leading-relaxed">
+                            {p.description}
+                        </p>
+                        <div className="flex flex-wrap gap-3 mt-6">
+                            {p.tech.map((t: string, i: number) => (
+                                <span key={i} className="px-3 py-1 bg-white/5 rounded-lg text-gray-400 text-sm border border-white/10">
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+                    </section>
 
-                    {/* Content */}
-                    <div className="space-y-16">
-                        <section>
-                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                    {/* 3. THE CHALLENGE */}
+                    {p.challenge && (
+                        <section className="mb-20">
+                            <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                                 <AlertCircle className="text-secondary" /> The Challenge
                             </h2>
-                            <p className="text-gray-300 text-lg leading-relaxed border-l-4 border-secondary/50 pl-6">
-                                {project.challenge}
-                            </p>
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+                                <ul className="space-y-4">
+                                    {p.challenge.map((item: string, i: number) => (
+                                        <li key={i} className="flex items-start gap-3 text-gray-300">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 shrink-0" />
+                                            <span className="text-lg">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </section>
+                    )}
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <TrendingUp className="text-success" /> The Solution
+                    {/* 4. THE SOLUTION */}
+                    {p.solution && (
+                        <section className="mb-20">
+                            <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                                <TrendingUp className="text-success" /> The Solution — Step-by-Step
                             </h2>
-                            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                                {project.solution}
-                            </p>
+                            <div className="space-y-6">
+                                {p.solution.map((step: string, i: number) => (
+                                    <div key={i} className="flex items-start gap-4 group">
+                                        <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent font-bold shrink-0 group-hover:bg-accent group-hover:text-background transition-colors">
+                                            {i + 1}
+                                        </div>
+                                        <div className="pt-1 text-gray-300 text-lg">
+                                            {step}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
 
-                            <div className="bg-black/30 p-8 rounded-2xl border border-white/10">
-                                <h3 className="text-lg font-bold text-white mb-6">Workflow Architecture</h3>
-                                <div className="space-y-4">
-                                    {project.workflowSteps.map((step, i) => (
-                                        <div key={i} className="flex items-center gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm font-bold text-white shrink-0">
-                                                {i + 1}
-                                            </div>
-                                            <div className="h-px flex-grow bg-white/10"></div>
-                                            <div className="w-full max-w-md bg-white/5 p-4 rounded-lg text-gray-300 text-sm border border-white/5">
+                    {/* 5. KEY RESULTS */}
+                    {p.results && (
+                        <section className="mb-20">
+                            <h2 className="text-2xl font-bold text-white mb-8">Key Results</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {p.results.map((result: string, i: number) => (
+                                    <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-xl flex items-start gap-4 hover:border-accent/30 transition-colors">
+                                        <CheckCircle className="text-accent shrink-0 mt-1" />
+                                        <span className="text-lg text-white font-medium">{result}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
+
+                    {/* 6. WORKFLOW DIAGRAM */}
+                    {p.workflowDiagram && (
+                        <section className="mb-20">
+                            <h2 className="text-2xl font-bold text-white mb-8">Workflow Diagram</h2>
+                            <div className="bg-black/40 border border-white/10 rounded-2xl p-8 md:p-12 overflow-x-auto">
+                                <div className="flex flex-col md:flex-row items-center justify-between gap-4 min-w-[600px]">
+                                    {p.workflowDiagram.map((step: string, i: number) => (
+                                        <div key={i} className="flex items-center gap-4 w-full md:w-auto">
+                                            <div className="bg-white/10 border border-white/20 px-6 py-3 rounded-lg text-white font-medium whitespace-nowrap w-full md:w-auto text-center">
                                                 {step}
                                             </div>
+                                            {i < p.workflowDiagram.length - 1 && (
+                                                <ArrowRight className="text-gray-500 shrink-0 rotate-90 md:rotate-0 mx-auto md:mx-0" />
+                                            )}
                                         </div>
                                     ))}
                                 </div>
                             </div>
                         </section>
+                    )}
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                <Layers className="text-accent" /> Tech Stack
-                            </h2>
-                            <div className="flex flex-wrap gap-3">
-                                {project.tech.map((t, i) => (
-                                    <span key={i} className="px-4 py-2 bg-white/5 rounded-lg text-gray-300 border border-white/10">
-                                        {t}
-                                    </span>
-                                ))}
-                            </div>
-                        </section>
+                    {/* 7. TECH STACK */}
+                    <section className="mb-20">
+                        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <Layers className="text-accent" /> Tech Stack
+                        </h2>
+                        <div className="flex flex-wrap gap-3">
+                            {p.tech.map((t: string, i: number) => (
+                                <span key={i} className="px-6 py-3 bg-white/5 rounded-xl text-white font-medium border border-white/10 text-lg">
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+                    </section>
 
-                        <div className="pt-12 border-t border-white/10 text-center">
-                            <h3 className="text-2xl font-bold text-white mb-6">Need Similar Automation?</h3>
+                    {/* 8. FINAL CTA */}
+                    {p.cta && (
+                        <div className="pt-16 border-t border-white/10 text-center">
+                            <h3 className="text-3xl font-bold text-white mb-8 max-w-2xl mx-auto">
+                                {p.cta.text}
+                            </h3>
                             <a
-                                href="#contact"
-                                className="inline-block px-8 py-4 bg-accent text-background font-bold rounded-xl hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+                                href={content.contact.bookingUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-background font-bold rounded-xl hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] text-lg"
                             >
-                                Schedule a Discovery Call
+                                <Calendar size={20} />
+                                {p.cta.buttonText}
                             </a>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </div>

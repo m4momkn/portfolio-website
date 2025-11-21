@@ -174,18 +174,46 @@
         {
             "id": "flyer-automation",
             "title": "Automated Flyer Creation System",
+            "subtitle": "A fully automated workflow that generates branded, ready-to-use promotional flyers directly from CRM data—eliminating hours of manual design work.",
             "category": "Creative Automation",
-            "description": "A workflow that automatically generates branded business flyers from CRM data. APITemplate handles design, n8n orchestrates the logic, and HubSpot provides structured content—turning hours of design work into seconds.",
+            "description": "This system automates the creation of weekly marketing flyers by pulling product data, prices, and content from HubSpot, formatting it through n8n, and generating fully designed flyers using APITemplate. The goal was to eliminate repetitive design tasks, ensure brand consistency, and dramatically speed up marketing output.",
             "tech": [
                 "APITemplate",
                 "HubSpot",
                 "n8n"
             ],
-            "results": [
-                "Instant design generation",
-                "Brand consistency",
-                "Data-driven designs"
+            "challenge": [
+                "Flyers were created manually every week",
+                "Copying product data from HubSpot took too long",
+                "Branding was inconsistent across different designers",
+                "Frequent human errors in product names and pricing",
+                "Multi-step process required formatting, image selection, and sending files manually"
             ],
+            "solution": [
+                "Product data and pricing automatically pulled from HubSpot",
+                "Data cleaned and formatted using custom n8n logic",
+                "APITemplate generates branded flyers using predefined templates",
+                "Flyers automatically exported as PNG/PDF",
+                "Final flyers sent to the marketing team or stored in a shared folder",
+                "Optional features include multiple layouts and automated weekly scheduling"
+            ],
+            "results": [
+                "95% faster flyer production",
+                "Consistent branding across all materials",
+                "Zero manual formatting or copy-paste errors",
+                "Weekly marketing output scaled effortlessly"
+            ],
+            "workflowDiagram": [
+                "HubSpot",
+                "n8n Logic",
+                "APITemplate",
+                "PDF/PNG Output",
+                "Delivered to Team"
+            ],
+            "cta": {
+                "text": "Want to automate your marketing content creation? Let’s build your system.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/flyer-automation.png"
         },
         {

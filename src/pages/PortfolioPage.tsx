@@ -117,8 +117,8 @@ const PortfolioPage = () => {
                                 </div>
 
                                 <div className="p-6 flex flex-col flex-grow">
-                                    <Link to={`/portfolio/${project.id}`} className="block group-hover:text-accent transition-colors">
-                                        <h3 className="text-xl font-bold text-white mb-2">
+                                    <Link to={`/portfolio/${project.id}`} className="block group/title">
+                                        <h3 className="text-xl font-bold text-white group-hover/title:text-accent transition-colors mb-2">
                                             {project.title}
                                         </h3>
                                     </Link>

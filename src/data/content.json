@@ -106,18 +106,45 @@
         {
             "id": "youtube-automation",
             "title": "AI-Powered YouTube Video Summarization & Analysis",
+            "subtitle": "Automatically extract key insights, summaries, and analytics from YouTube videos using AI-driven processing.",
             "category": "AI Automation",
-            "description": "An automated system that fetches YouTube videos, extracts or auto-generates transcripts, and produces structured summaries, key insights, topic breakdowns, tags, and viewer action points. The workflow can also generate SEO descriptions, titles, and chapter markers—helping creators, agencies, and teams process and repurpose long-form content instantly.",
+            "description": "This system leverages AI to analyze YouTube videos and generate concise summaries, highlights, and actionable insights. It can process long-form content quickly, identify important segments, and provide analytics for content strategy or research purposes. The goal is to reduce manual review time and enhance understanding of video content.",
             "tech": [
-                "n8n",
-                "AI LLMs",
-                "YouTube API"
+                "AI NLP Engine",
+                "Video Processing",
+                "Analytics Automation"
+            ],
+            "challenge": [
+                "Manually reviewing long videos was time-consuming",
+                "Extracting key points and highlights required significant effort",
+                "Tracking analytics and viewer insights across multiple videos was difficult",
+                "Summarizing content consistently was challenging",
+                "No automated workflow to combine summarization and analytics"
+            ],
+            "solution": [
+                "Input YouTube video URL into the workflow",
+                "AI NLP Engine transcribes and interprets the video content",
+                "Key segments and highlights are identified automatically",
+                "Analytics Automation compiles insights, statistics, and summaries",
+                "Optional steps include generating visual highlights, keyword extraction, and report creation"
             ],
             "results": [
-                "Automated comment replies",
-                "Script generation",
-                "Deep content analysis"
+                "Fast extraction of summaries and highlights",
+                "Reduced manual review time drastically",
+                "Consistent and structured insights across all videos",
+                "Automated analytics and reporting"
             ],
+            "workflowDiagram": [
+                "YouTube Video",
+                "AI NLP Engine",
+                "Highlight Extraction",
+                "Analytics Automation",
+                "Summary & Report"
+            ],
+            "cta": {
+                "text": "Want to automatically summarize and analyze your YouTube videos? Let’s build your workflow.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/youtube-summarization.png"
         },
         {

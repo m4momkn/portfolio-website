@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, AlertCircle, Layers, CheckCircle, ArrowRight, Calendar } from 'lucide-react';
-import { motion } from 'framer-motion';
+
 import content from '../data/content.json';
 
 const CaseStudyPage = () => {

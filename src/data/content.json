@@ -89,18 +89,46 @@
         {
             "id": "lead-assignment",
             "title": "Automated Lead Assignment & Sales Notifications Workflow",
+            "subtitle": "A fully automated system that captures, assigns, and notifies sales teams about leads using Hunter, HubSpot, Telegram, and n8n.",
             "category": "Business Automation",
-            "description": "A fully automated pipeline that routes inbound leads to the correct sales representative based on rules, triggers instant Slack notifications, and logs all activity in HubSpot—removing manual work and speeding up response time.",
+            "description": "This workflow automates lead capture, assignment, and notification processes for sales teams. Hunter identifies leads, HubSpot stores and manages them, n8n orchestrates the workflow, and Telegram delivers instant notifications to the relevant sales representatives. The goal is to reduce response time and improve lead management efficiency.",
             "tech": [
+                "Hunter",
                 "HubSpot",
-                "Slack",
+                "Telegram",
                 "n8n"
             ],
-            "results": [
-                "Instant lead routing",
-                "Zero manual data entry",
-                "Faster response times"
+            "challenge": [
+                "Manual lead assignment caused delays",
+                "Sales notifications were inconsistent",
+                "Tracking leads across multiple platforms was time-consuming",
+                "High risk of leads falling through the cracks",
+                "No automated system to integrate lead capture, assignment, and alerts"
             ],
+            "solution": [
+                "Lead information captured via Hunter",
+                "n8n orchestrates the workflow and assigns leads based on predefined rules",
+                "HubSpot stores lead data and updates lead status automatically",
+                "Telegram sends instant notifications to assigned sales representatives",
+                "Optional steps include follow-ups, reminders, and analytics reporting"
+            ],
+            "results": [
+                "Leads assigned automatically without manual intervention",
+                "Instant notifications to sales team members",
+                "Improved lead tracking and management",
+                "Reduced response time and higher conversion potential"
+            ],
+            "workflowDiagram": [
+                "Lead Capture (Hunter)",
+                "n8n Workflow Logic",
+                "HubSpot Lead Management",
+                "Telegram Notification",
+                "Sales Team Action"
+            ],
+            "cta": {
+                "text": "Want to automate your lead assignment and sales notifications? Let’s set it up.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/lead-assignment.png"
         },
         {

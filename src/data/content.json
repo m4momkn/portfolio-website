@@ -356,18 +356,46 @@
         {
             "id": "security-docs-automation",
             "title": "Automated Employee Security Documentation System",
+            "subtitle": "A desktop application that processes complex Excel datasets to automatically generate security passes, legal undertakings, and compliance documents.",
             "category": "Desktop Automation",
             "description": "A desktop application that processes complex Excel datasets to automatically generate employee security passes, legal undertakings, and compliance reports. The custom automation engine removes manual work, ensures 100% data accuracy, and accelerates the entire document-issuance workflow.",
             "tech": [
-                "Python",
-                "Desktop App",
-                "Excel Automation"
+                "Desktop Application",
+                "Excel Processing Engine",
+                "Document Generator",
+                "Automation Logic"
+            ],
+            "challenge": [
+                "Manual document creation was slow and repetitive",
+                "High risk of human errors in employee data",
+                "Compliance documents required strict formatting consistency",
+                "Processing large Excel datasets was time-consuming",
+                "No automated way to generate multiple document types at once"
+            ],
+            "solution": [
+                "Excel dataset imported into the application",
+                "Automation Logic validates and structures employee records",
+                "Document Generator produces security passes, legal undertakings, and compliance reports",
+                "All files exported into organized folders automatically",
+                "Optional steps include batch processing, custom templates, and automated email delivery"
             ],
             "results": [
-                "100% data accuracy",
-                "Accelerated issuance",
-                "Automated document synthesis"
+                "100% accurate documentation output",
+                "Massive reduction in manual workload",
+                "Fast processing of large Excel datasets",
+                "Consistent formatting across all generated documents"
             ],
+            "workflowDiagram": [
+                "Excel Dataset",
+                "Validation & Structuring",
+                "Document Generator",
+                "Organized File Export",
+                "Completed Documentation"
+            ],
+            "cta": {
+                "text": "Looking to automate employee security and compliance documentation? Let’s build your system.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/security-docs-automation.png"
         }
     ],

@@ -157,18 +157,46 @@
         {
             "id": "video-automation",
             "title": "AI Long-Form Video Content Automation",
+            "subtitle": "A fully automated system that transforms short inputs, scripts, or images into complete long-form AI-generated videos using n8n, FAL, and KIE.",
             "category": "Content Automation",
-            "description": "A system that transforms images or short inputs into long-form AI-generated video content. Uses FAL and KIE pipelines integrated with n8n for automated rendering, editing, and publishing.",
+            "description": "This automation pipeline generates long-form AI videos by orchestrating multiple tools together. n8n handles the workflow logic, FAL processes and compiles multiple video segments, and KIE is used to create high-quality VEO3-style video outputs. The goal was to automate the entire video creation lifecycle—from raw input to polished, ready-to-publish content.",
             "tech": [
                 "n8n",
                 "FAL",
                 "KIE"
             ],
-            "results": [
-                "Automated video creation",
-                "Scalable content production",
-                "High-quality rendering"
+            "challenge": [
+                "Creating long-form videos manually was time-consuming",
+                "AI tools required manual uploading, downloading, and combining",
+                "No unified workflow to manage scripts, clips, and rendering",
+                "Difficult to maintain consistent quality across video segments",
+                "Editing and assembling multiple assets took hours of manual work"
             ],
+            "solution": [
+                "Input script, prompts, or images received by the workflow",
+                "n8n prepares structured scenes, transitions, and content layouts",
+                "KIE generates VEO3-style video scenes based on the prepared prompts",
+                "FAL processes all generated clips and compiles them into a single long-form video",
+                "Final video rendered and exported automatically",
+                "Optional automation steps include thumbnail generation, caption creation, and multi-platform export scheduling"
+            ],
+            "results": [
+                "Complete long-form videos generated without manual editing",
+                "70% faster production pipeline compared to manual workflows",
+                "Consistent quality across all segments",
+                "Automated rendering and compilation of all video assets"
+            ],
+            "workflowDiagram": [
+                "Input",
+                "n8n Workflow Logic",
+                "KIE (VEO3 Scenes)",
+                "FAL (Compilation)",
+                "Final Long-Form Video"
+            ],
+            "cta": {
+                "text": "Interested in automating your video production pipeline? Let’s build your custom workflow.",
+                "buttonText": "Book a Call"
+            },
             "image": "/images/video-automation.png"
         },
         {

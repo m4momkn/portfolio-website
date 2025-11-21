@@ -113,15 +113,18 @@ const CaseStudyPage = () => {
                     {p.workflowDiagram && (
                         <section className="mb-20">
                             <h2 className="text-2xl font-bold text-white mb-8">Workflow Diagram</h2>
-                            <div className="bg-black/40 border border-white/10 rounded-2xl p-8 md:p-12 overflow-x-auto">
-                                <div className="flex flex-col md:flex-row items-center justify-between gap-4 min-w-[600px]">
+                            <div className="bg-black/40 border border-white/10 rounded-2xl p-8 md:p-12">
+                                <div className="flex flex-wrap items-center justify-center gap-4">
                                     {p.workflowDiagram.map((step: string, i: number) => (
-                                        <div key={i} className="flex items-center gap-4 w-full md:w-auto">
-                                            <div className="bg-white/10 border border-white/20 px-6 py-3 rounded-lg text-white font-medium whitespace-nowrap w-full md:w-auto text-center">
+                                        <div key={i} className="flex items-center gap-4">
+                                            <div className="bg-white/10 border border-white/20 px-6 py-3 rounded-lg text-white font-medium text-center">
                                                 {step}
                                             </div>
                                             {i < p.workflowDiagram.length - 1 && (
-                                                <ArrowRight className="text-gray-500 shrink-0 rotate-90 md:rotate-0 mx-auto md:mx-0" />
+                                                <ArrowRight className="text-gray-500 shrink-0 hidden md:block" />
+                                            )}
+                                            {i < p.workflowDiagram.length - 1 && (
+                                                <ArrowRight className="text-gray-500 shrink-0 rotate-90 md:hidden" />
                                             )}
                                         </div>
                                     ))}

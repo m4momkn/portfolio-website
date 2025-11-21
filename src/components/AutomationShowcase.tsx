@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Database, Mail, MessageSquare, FileText, CheckCircle, XCircle, ArrowRight, Zap, AlertCircle, Clock, DollarSign } from 'lucide-react';
+import { Database, Mail, MessageSquare, FileText, CheckCircle, XCircle, Zap, AlertCircle, Clock, DollarSign } from 'lucide-react';
 
 const AutomationShowcase = () => {
     const [mode, setMode] = useState<'manual' | 'automated'>('manual');
-    const [activeStep, setActiveStep] = useState<number | null>(null);
+
 
     const manualSteps = [
         { id: 1, icon: <Mail className="text-gray-400" />, label: "Receive Email", x: 0, y: 0 },

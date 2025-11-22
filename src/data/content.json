@@ -129,7 +129,7 @@
                 "text": "Want to automate your lead assignment and sales notifications? Let’s set it up.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/lead-assignment.png"
+            "image": "/images/lead-assignment.webp"
         },
         {
             "id": "youtube-automation",
@@ -173,7 +173,7 @@
                 "text": "Want to automatically summarize and analyze your YouTube videos? Let’s build your workflow.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/youtube-summarization.png"
+            "image": "/images/youtube-summarization.webp"
         },
         {
             "id": "whatsapp-chatbot",
@@ -217,7 +217,7 @@
                 "text": "Want to automate your customer support and engagement on WhatsApp? Let’s build your chatbot.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/whatsapp-chatbot.png"
+            "image": "/images/whatsapp-chatbot.webp"
         },
         {
             "id": "calendar-agent",
@@ -261,7 +261,7 @@
                 "text": "Want a virtual assistant to handle your scheduling and client interactions? Let’s set it up.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/calendar-agent.png"
+            "image": "/images/calendar-agent.webp"
         },
         {
             "id": "video-automation",
@@ -306,7 +306,7 @@
                 "text": "Interested in automating your video production pipeline? Let’s build your custom workflow.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/video-automation.png"
+            "image": "/images/video-automation.webp"
         },
         {
             "id": "flyer-automation",
@@ -351,7 +351,7 @@
                 "text": "Want to automate your marketing content creation? Let’s build your system.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/flyer-automation.png"
+            "image": "/images/flyer-automation.webp"
         },
         {
             "id": "security-docs-automation",
@@ -396,7 +396,7 @@
                 "text": "Looking to automate employee security and compliance documentation? Let’s build your system.",
                 "buttonText": "Book a Call"
             },
-            "image": "/images/security-docs-automation.png"
+            "image": "/images/security-docs-automation.webp"
         }
     ],
     "about": {

@@ -10,6 +10,8 @@ import ProcessTimeline from './components/ProcessTimeline';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 
+import ScrollToTop from './components/ScrollToTop';
+
 // Lazy load pages to improve initial load time (LCP)
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
@@ -20,6 +22,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-background min-h-screen text-text font-sans selection:bg-accent/30">
         <Navbar />
         <main>

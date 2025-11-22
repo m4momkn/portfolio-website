@@ -34,7 +34,7 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.3 }}
                         className="mb-6"
                     >
                         <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent text-sm font-medium backdrop-blur-sm">
@@ -45,7 +45,7 @@ const Hero = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.5 }}
                         className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
                     >
                         {content.personal.name}

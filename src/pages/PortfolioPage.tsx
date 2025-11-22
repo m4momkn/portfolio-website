@@ -93,6 +93,7 @@ const PortfolioPage = () => {
                                         <img
                                             src={project.image}
                                             alt={project.title}
+                                            loading="lazy"
                                             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                                         />
                                     ) : (

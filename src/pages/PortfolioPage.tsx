@@ -124,7 +124,7 @@ const PortfolioPage = () => {
                                 </div>
 
                                 <div className="p-6 flex flex-col flex-grow">
-                                    <Link to={`/ portfolio / ${project.id} `} className="block group/title">
+                                    <Link to={`/portfolio/${project.id}`} className="block group/title">
                                         <h3 className="text-xl font-bold text-white group-hover/title:text-accent transition-colors mb-2">
                                             {project.title}
                                         </h3>
@@ -148,7 +148,7 @@ const PortfolioPage = () => {
 
                                     <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                                         <Link
-                                            to={`/ portfolio / ${project.id} `}
+                                            to={`/portfolio/${project.id}`}
                                             className="text-sm font-bold text-accent hover:text-white transition-colors flex items-center gap-2"
                                         >
                                             View Case Study

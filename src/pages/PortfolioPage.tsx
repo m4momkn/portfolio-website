@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Code, Zap, Bot, MessageSquare, Brain, Video, Palette, Maximize2, X, ArrowRight } from 'lucide-react';
 import content from '../data/content.json';
+import SEO from '../components/SEO';
 
 const PortfolioPage = () => {
     const [filter, setFilter] = useState('All');
@@ -32,6 +33,11 @@ const PortfolioPage = () => {
 
     return (
         <div className="pt-24 pb-20 bg-background min-h-screen">
+            <SEO
+                title="Portfolio"
+                description="Explore my latest AI automation projects, from custom agents to complex workflow integrations."
+                url="https://elkady.dev/portfolio"
+            />
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -49,10 +55,10 @@ const PortfolioPage = () => {
                             <button
                                 key={cat}
                                 onClick={() => setFilter(cat)}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${filter === cat
+                                className={`px - 4 py - 2 rounded - full text - sm font - medium transition - all ${filter === cat
                                     ? 'bg-accent text-background font-bold'
                                     : 'bg-white/5 text-gray-400 hover:bg-white/10'
-                                    }`}
+                                    } `}
                             >
                                 {cat}
                             </button>
@@ -118,7 +124,7 @@ const PortfolioPage = () => {
                                 </div>
 
                                 <div className="p-6 flex flex-col flex-grow">
-                                    <Link to={`/portfolio/${project.id}`} className="block group/title">
+                                    <Link to={`/ portfolio / ${project.id} `} className="block group/title">
                                         <h3 className="text-xl font-bold text-white group-hover/title:text-accent transition-colors mb-2">
                                             {project.title}
                                         </h3>
@@ -142,7 +148,7 @@ const PortfolioPage = () => {
 
                                     <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                                         <Link
-                                            to={`/portfolio/${project.id}`}
+                                            to={`/ portfolio / ${project.id} `}
                                             className="text-sm font-bold text-accent hover:text-white transition-colors flex items-center gap-2"
                                         >
                                             View Case Study

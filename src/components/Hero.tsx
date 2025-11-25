@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import content from '../data/content.json';
+import SEO from './SEO';
 
 const Hero = () => {
     const [textIndex, setTextIndex] = useState(0);
@@ -22,6 +23,10 @@ const Hero = () => {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+            <SEO
+                title="Mahmoud Elkady | AI Automation Engineer"
+                description={content.personal.tagline}
+            />
             {/* Background Elements */}
             <div className="absolute inset-0 bg-background">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,240,255,0.1),transparent_50%)]"></div>

@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, AlertCircle, Layers, CheckCircle, ArrowRight, Calendar } from 'lucide-react';
-
 import content from '../data/content.json';
+import SEO from '../components/SEO';
 
 const CaseStudyPage = () => {
     const { id } = useParams();
@@ -16,6 +16,12 @@ const CaseStudyPage = () => {
 
     return (
         <div className="pt-20 pb-16 bg-background min-h-screen">
+            <SEO
+                title={p.title}
+                description={p.subtitle || p.description}
+                image={p.image}
+                url={`https://elkady.dev/portfolio/${p.id}`}
+            />
             <div className="container mx-auto px-4">
                 <Link to="/portfolio" className="inline-flex items-center text-gray-400 hover:text-white mb-6 transition-colors">
                     <ArrowLeft className="w-4 h-4 mr-2" /> Back to Portfolio

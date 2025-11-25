@@ -24,8 +24,11 @@ const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <SEO
-                title="Mahmoud Elkady | AI Automation Engineer"
-                description={content.personal.tagline}
+                title="Mahmoud Elkady | AI Automation Engineer & Automation Systems Expert"
+                description="Discover Mahmoud Elkady, an AI Automation Engineer specializing in custom automation systems, intelligent workflows, and AI-powered business solutions. 200+ automation workflows delivered. View projects, case studies, and book a discovery call. Trusted by startups, agencies, and enterprises."
+                keywords="Mahmoud Elkady, AI Automation Engineer, automation systems expert, AI workflows, AI developer Egypt, automation engineer portfolio, business automation specialist, n8n expert, Make.com expert, automation consultant, custom AI agents"
+                ogTitle="Mahmoud Elkady — AI Automation & Intelligent Systems Engineer"
+                ogDescription="AI automation engineer delivering intelligent systems that automate workflows, save time, and scale businesses. Explore projects, systems, and client results."
             />
             {/* Background Elements */}
             <div className="absolute inset-0 bg-background">

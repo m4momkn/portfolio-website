@@ -20,7 +20,7 @@ const CaseStudyPage = () => {
                 title={p.title}
                 description={p.subtitle || p.description}
                 image={p.image}
-                url={`https://elkady.dev/portfolio/${p.id}`}
+                url={`https://elkady.dev/projects/${p.id}`}
             />
 
             <Link to="/projects" className="inline-flex items-center text-gray-500 hover:text-gray-900 mb-8 transition-colors">

@@ -32,7 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/projects" element={<ProjectsPage />} /> {/* Changed path from /portfolio to /projects */}
-            <Route path="/portfolio/:id" element={<CaseStudyPage />} />
+            <Route path="/projects/:id" element={<CaseStudyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             {/* Add placeholders for other routes if needed */}

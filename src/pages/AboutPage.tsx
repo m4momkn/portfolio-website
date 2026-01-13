@@ -1,15 +1,9 @@
-import { motion } from 'framer-motion';
 import content from '../data/content.json';
 
 const AboutPage = () => {
-
     return (
         <div className="max-w-3xl">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
+            <div className="animate-fade-in-up">
                 <h1 className="text-5xl font-bold mb-4">{content.personal.name}</h1>
 
                 <div className="text-sm text-gray-500 font-medium tracking-wide uppercase mb-8">
@@ -36,10 +30,8 @@ const AboutPage = () => {
                             ))}
                         </div>
                     </section>
-
-
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 };

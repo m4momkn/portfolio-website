@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 import content from '../data/content.json';
 import { Link } from 'react-router-dom';
 
@@ -8,11 +6,7 @@ const ProjectsPage = () => {
 
     return (
         <div className="max-w-5xl">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
+            <div className="animate-fade-in-up">
                 <h1 className="text-4xl font-bold mb-2">Projects</h1>
                 <p className="text-gray-600 mb-12">Playground - Small MVP to Production Apps</p>
 
@@ -20,7 +14,6 @@ const ProjectsPage = () => {
                     {projects.map((project) => (
                         <Link to={`/projects/${project.id}`} key={project.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow group block">
                             <div className="h-48 bg-gray-100 overflow-hidden relative">
-                                {/* Use project image if available, otherwise placeholder */}
                                 <img
                                     src={project.image || "https://images.unsplash.com/photo-1664575602276-acd073f104c1?fit=crop&w=500&h=300"}
                                     alt={project.title}
@@ -39,8 +32,6 @@ const ProjectsPage = () => {
                                 </p>
 
                                 <div className="flex items-center gap-3 mb-4">
-                                    {/* Assuming CTA button text implies a demo/visit link if it was a real link, 
-                        but for now we'll just show a 'View' button that could link to details */}
                                     <span className="bg-black text-white text-xs font-medium px-3 py-1.5 rounded-md hover:bg-gray-800 transition-colors cursor-pointer">
                                         View Details
                                     </span>
@@ -67,7 +58,7 @@ const ProjectsPage = () => {
                         </Link>
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 };

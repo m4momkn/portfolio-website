@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import content from '../data/content.json';
 import { Zap, Brain, Database, Briefcase } from 'lucide-react';
 
@@ -15,11 +14,7 @@ const ToolsPage = () => {
 
     return (
         <div className="max-w-4xl">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-            >
+            <div className="animate-fade-in-up">
                 <h1 className="text-4xl font-bold mb-2">Tools & Tech Stack</h1>
                 <p className="text-gray-600 mb-12">The technologies I use to build intelligent automation systems.</p>
 
@@ -43,7 +38,7 @@ const ToolsPage = () => {
                         </div>
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 };

@@ -42,16 +42,14 @@
       margin-right: auto
     }
 
-    .max-w-7xl {
-      max-width: 80rem
+    /* Main Content Layout - Matching Layout.tsx exactly */
+    .max-w-4xl {
+      max-width: 56rem
     }
 
-    .max-w-3xl {
-      max-width: 48rem
-    }
-
-    .p-8 {
-      padding: 2rem
+    /* Changed from 7xl to 4xl to match Layout.tsx */
+    .w-full {
+      width: 100%
     }
 
     .flex {
@@ -73,6 +71,17 @@
     .justify-center {
       justify-content: center
     }
+
+    /* Padding - Matching Layout.tsx */
+    .p-6 {
+      padding: 1.5rem
+    }
+
+    .pt-16 {
+      padding-top: 4rem
+    }
+
+    /* Critical for mobile menu spacing */
 
     /* Spacing */
     .mb-4 {
@@ -161,6 +170,11 @@
         padding: 3rem
       }
 
+      .md\:pt-8 {
+        padding-top: 2rem
+      }
+
+      /* Override mobile pt-16 */
       .md\:flex-row {
         flex-direction: row
       }
@@ -186,9 +200,19 @@
       }
     }
 
+    @media(min-width:1024px) {
+      .lg\:p-16 {
+        padding: 4rem
+      }
+    }
+
     /* Custom */
     .min-h-\[160px\] {
       min-height: 160px
+    }
+
+    .max-w-3xl {
+      max-width: 48rem
     }
   </style>
 
@@ -211,35 +235,42 @@
 <body>
   <div id="root">
     <!-- Prerendered Content for Immediate LCP -->
-    <div class="md:ml-64 min-h-screen bg-white">
-      <main class="p-8 md:p-12 max-w-7xl mx-auto">
-        <div class="max-w-3xl">
-          <div class="flex flex-col md:flex-row md:items-center md:gap-12 mb-8">
-            <div class="flex-1">
-              <h1 class="text-5xl font-bold mb-4 text-primary">
-                Hey, I'm <span class="bg-gray-200 px-2 rounded-md inline-block">Mahmoud</span>
-              </h1>
-              <h2 class="text-3xl font-bold text-gray-400 mb-8">
-                AI Automation & Integration Engineer
-              </h2>
+    <!-- Matches Layout.tsx structure exactly -->
+    <div class="flex min-h-screen bg-transparent text-text font-sans relative">
+      <!-- Sidebar Placeholder (Empty but preserves layout if needed, though fixed pos doesn't affect flow much) -->
+
+      <!-- Main Content Wrapper -->
+      <div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 pt-16 md:pt-8 md:p-12 lg:p-16 max-w-4xl mx-auto w-full">
+          <div class="max-w-3xl">
+            <div class="flex flex-col md:flex-row md:items-center md:gap-12 mb-8">
+              <div class="flex-1">
+                <h1 class="text-5xl font-bold mb-4 text-primary">
+                  Hey, I'm <span class="bg-gray-200 px-2 rounded-md inline-block">Mahmoud</span>
+                </h1>
+                <h2 class="text-3xl font-bold text-gray-400 mb-8">
+                  AI Automation & Integration Engineer
+                </h2>
+              </div>
+              <!-- Avatar Placeholder Space -->
+              <div class="flex justify-center md:justify-end mt-8 md:mt-0 min-h-[160px] md:min-h-[208px]">
+              </div>
             </div>
-            <!-- Avatar Placeholder Space -->
-            <div class="flex justify-center md:justify-end mt-8 md:mt-0 min-h-[160px] md:min-h-[208px]">
+            <div>
+              <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  I am an AI Automation Engineer focused on building efficient systems. I connect tools like n8n and AI
+                  models to streamline business processes, replacing manual work with reliable automated workflows.
+                </p>
+                <p>
+                  Based in <span class="font-semibold">Cairo, Egypt</span>.
+                </p>
+              </div>
             </div>
           </div>
-          <div>
-            <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
-              <p>
-                I am an AI Automation Engineer focused on building efficient systems. I connect tools like n8n and AI
-                models to streamline business processes, replacing manual work with reliable automated workflows.
-              </p>
-              <p>
-                Based in <span class="font-semibold">Cairo, Egypt</span>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   </div>
   <script type="module" src="/src/main.tsx"></script>

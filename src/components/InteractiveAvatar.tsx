@@ -26,7 +26,7 @@ const InteractiveAvatar = () => {
                 type: 'spring',
                 stiffness: 200,
                 damping: 20,
-                delay: 0.5
+                delay: 0.1
             }}
             // Drag & Snap
             drag

@@ -11,7 +11,7 @@ const ContactEmailLink = ({ email }: { email: string }) => {
         <a
             href={`mailto:${email}`}
             onClick={handleEmailClick}
-            className="text-gray-400 hover:text-accent transition-colors block"
+            className="text-gray-600 hover:text-accent transition-colors block"
         >
             {showEmail ? (copied ? 'Copied to clipboard!' : email) : email}
         </a>
@@ -59,75 +59,73 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="pt-24 pb-20 bg-background min-h-screen">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
+        <div className="max-w-5xl">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <div className="flex flex-col lg:flex-row gap-12">
 
                     {/* Contact Info & Calendar */}
                     <div className="w-full lg:w-1/3 space-y-8">
                         <div>
-                            <h1 className="text-4xl font-bold text-white mb-4">Let's Talk</h1>
-                            <p className="text-gray-400 leading-relaxed">
+                            <h1 className="text-4xl font-bold text-gray-900 mb-4">Let's Talk</h1>
+                            <p className="text-gray-600 leading-relaxed">
                                 Ready to automate your business? Fill out the form or book a call directly.
                             </p>
                         </div>
 
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-white/5 rounded-lg text-accent">
+                                <div className="p-3 bg-gray-100 rounded-lg text-accent">
                                     <Mail />
                                 </div>
                                 <div>
-                                    <h3 className="text-white font-medium mb-1">Email</h3>
+                                    <h3 className="text-gray-900 font-medium mb-1">Email</h3>
                                     <ContactEmailLink email={content.personal.email} />
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-white/5 rounded-lg text-accent">
+                                <div className="p-3 bg-gray-100 rounded-lg text-accent">
                                     <MapPin />
                                 </div>
                                 <div>
-                                    <h3 className="text-white font-medium mb-1">Location</h3>
-                                    <p className="text-gray-400">{content.personal.location}</p>
+                                    <h3 className="text-gray-900 font-medium mb-1">Location</h3>
+                                    <p className="text-gray-600">{content.personal.location}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="p-6 bg-gradient-to-br from-accent/10 to-secondary/10 border border-accent/20 rounded-2xl">
-                            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <div className="p-6 bg-gray-50 border border-gray-200 rounded-2xl">
+                            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                                 <Calendar className="text-accent" /> Book a Call
                             </h3>
-                            <p className="text-gray-400 text-sm mb-6">
+                            <p className="text-gray-600 text-sm mb-6">
                                 Skip the back-and-forth. Schedule a 30-minute discovery call directly on my calendar.
                             </p>
                             <a
                                 href={content.contact.bookingUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block w-full py-3 bg-accent text-background font-bold text-center rounded-lg hover:bg-accent/90 transition-colors"
+                                className="block w-full py-3 bg-black text-white font-bold text-center rounded-lg hover:bg-gray-800 transition-colors"
                             >
                                 View Calendar
                             </a>
                         </div>
-
-
                     </div>
 
                     {/* Contact Form */}
                     <div className="w-full lg:w-2/3">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="bg-white/5 border border-white/10 rounded-2xl p-8"
-                        >
+                        <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
                             {status === 'success' ? (
                                 <div className="text-center py-12">
-                                    <div className="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6 text-success">
+                                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
                                         <CheckCircle size={40} />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                                    <p className="text-gray-400">I'll get back to you within 24 hours.</p>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                                    <p className="text-gray-600">I'll get back to you within 24 hours.</p>
                                     <button
                                         onClick={() => setStatus('idle')}
                                         className="mt-8 text-accent hover:underline"
@@ -139,26 +137,26 @@ const ContactPage = () => {
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-sm font-medium text-gray-300">Name</label>
+                                            <label className="text-sm font-medium text-gray-700">Name</label>
                                             <input
                                                 type="text"
                                                 name="name"
                                                 required
                                                 value={formState.name}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                                                 placeholder="John Doe"
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm font-medium text-gray-300">Email</label>
+                                            <label className="text-sm font-medium text-gray-700">Email</label>
                                             <input
                                                 type="email"
                                                 name="email"
                                                 required
                                                 value={formState.email}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                                                 placeholder="john@company.com"
                                             />
                                         </div>
@@ -166,23 +164,23 @@ const ContactPage = () => {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
-                                            <label className="text-sm font-medium text-gray-300">Company</label>
+                                            <label className="text-sm font-medium text-gray-700">Company</label>
                                             <input
                                                 type="text"
                                                 name="company"
                                                 value={formState.company}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                                                 placeholder="Company Ltd."
                                             />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm font-medium text-gray-300">Project Type</label>
+                                            <label className="text-sm font-medium text-gray-700">Project Type</label>
                                             <select
                                                 name="projectType"
                                                 value={formState.projectType}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                                             >
                                                 <option>Automation</option>
                                                 <option>AI Integration</option>
@@ -193,14 +191,14 @@ const ContactPage = () => {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-gray-300">Message</label>
+                                        <label className="text-sm font-medium text-gray-700">Message</label>
                                         <textarea
                                             name="message"
                                             required
                                             rows={4}
                                             value={formState.message}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg text-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                                             placeholder="Tell me about your project..."
                                         ></textarea>
                                     </div>
@@ -208,7 +206,7 @@ const ContactPage = () => {
                                     <button
                                         type="submit"
                                         disabled={status === 'submitting'}
-                                        className="w-full py-4 bg-accent text-background font-bold rounded-lg hover:bg-accent/90 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                        className="w-full py-4 bg-black text-white font-bold rounded-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {status === 'submitting' ? (
                                             <>
@@ -222,10 +220,10 @@ const ContactPage = () => {
                                     </button>
                                 </form>
                             )}
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

@@ -4,22 +4,22 @@
         "role": "AI Automation & Integration Engineer",
         "tagline": "I build intelligent automation systems that run your business for you.",
         "email": "mahmoudallkadyy@gmail.com",
-        "location": "Cairo, Egypt (Serving Globally)",
+        "location": "Cairo, Egypt",
         "social": {}
     },
     "hero": {
         "stats": [
             {
                 "label": "Workflows Built",
-                "value": "200+"
+                "value": "+100"
             },
             {
                 "label": "Hours Saved",
-                "value": "5000+"
+                "value": "+500"
             },
             {
                 "label": "Happy Clients",
-                "value": "50+"
+                "value": "+10"
             }
         ]
     },
@@ -400,7 +400,7 @@
         }
     ],
     "about": {
-        "story": "I'm Mahmoud Alkady, an AI Automation & Integration Engineer. I specialize in building intelligent systems that do the heavy lifting for you. From custom AI agents to complex n8n workflows, I turn manual chaos into automated precision.",
+        "story": "I am an AI Automation Engineer focused on building efficient systems. I connect tools like n8n and AI models to streamline business processes, replacing manual work with reliable automated workflows.",
         "expertise": [
             {
                 "category": "Automation Systems",

@@ -7,12 +7,13 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#0A192F",
-                secondary: "#8B5CF6",
-                accent: "#00F0FF",
-                success: "#10B981",
-                background: "#1A202C",
-                text: "#E2E8F0",
+                primary: "#1F2937", // Dark Gray Text
+                secondary: "#4B5563", // Gray-600
+                accent: "#EAB308", // Yellow-500
+                background: "#F3F4F6", // Light Gray
+                sidebar: "#F9FAFB", // Off-white
+                text: "#1F2937", // Dark Gray
+                muted: "#6B7280", // Gray-500
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],

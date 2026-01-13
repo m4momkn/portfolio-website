@@ -38,12 +38,7 @@ const SEO = ({
             <meta property="og:description" content={finalOgDescription} />
             <meta property="og:image" content={image} />
 
-            {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={url} />
-            <meta property="twitter:title" content={finalOgTitle} />
-            <meta property="twitter:description" content={finalOgDescription} />
-            <meta property="twitter:image" content={image} />
+
         </Helmet>
     );
 };

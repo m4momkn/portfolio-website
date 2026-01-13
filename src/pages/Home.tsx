@@ -9,8 +9,8 @@ const Home = () => {
         <div className="max-w-3xl">
             {/* Hero Section with Avatar */}
             <div className="flex flex-col md:flex-row md:items-center md:gap-12 mb-8">
-                {/* LCP Content - immediate render */}
-                <div className="flex-1 animate-fade-in-up">
+                {/* LCP Content - NO ANIMATION for immediate render */}
+                <div className="flex-1">
                     <h1 className="text-5xl font-bold mb-4 text-primary">
                         Hey, I'm <span className="bg-gray-200 px-2 rounded-md inline-block">Mahmoud</span>
                     </h1>
@@ -20,7 +20,7 @@ const Home = () => {
                     </h2>
                 </div>
 
-                {/* Avatar - no placeholder, flies in when ready */}
+                {/* Avatar - flies in when ready */}
                 <div className="flex justify-center md:justify-end mt-8 md:mt-0 min-h-[160px] md:min-h-[208px]">
                     <Suspense fallback={null}>
                         <InteractiveAvatar />
@@ -28,8 +28,8 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Main content */}
-            <div className="animate-fade-in-up animation-delay-100">
+            {/* Main content - LCP paragraph, no animation delay */}
+            <div>
                 <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                     <p>
                         {content.about.story}
@@ -50,7 +50,7 @@ const Home = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 animate-fade-in animation-delay-300">
+                <div className="mt-16">
                     <p className="text-gray-600 mb-4">
                         You can talk to me about <span className="font-bold text-gray-900">AI, Automation, n8n, or anything else.</span>
                     </p>

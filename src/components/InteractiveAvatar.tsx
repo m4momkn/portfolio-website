@@ -74,6 +74,8 @@ const InteractiveAvatar = () => {
                 <img
                     src="/images/cartoon-avatar.webp"
                     alt="Mahmoud's cartoon avatar"
+                    width="160"
+                    height="160"
                     className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover border-4 border-white shadow-xl animate-float"
                     draggable={false}
                     fetchPriority="high"

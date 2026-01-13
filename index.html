@@ -20,10 +20,20 @@
       background: #fff;
       color: #1f2937;
       line-height: 1.5;
+    }
+
+    /* Loader Wrapper - Centers only the loader, removed when React mounts */
+    .loader-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: white;
+      z-index: 9999;
     }
 
     /* Simple Loading Spinner */
@@ -51,13 +61,10 @@
   <!-- Font Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload"
+  <!-- Blocking load to prevent layout shift (FOUT/FOIT) -->
+  <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" />
-  </noscript>
+    rel="stylesheet">
 
   <title>Mahmoud Elkady | AI Automation Engineer & Automation Systems Expert</title>
   <meta name="description"
@@ -66,7 +73,9 @@
 
 <body>
   <div id="root">
-    <span class="loader"></span>
+    <div class="loader-wrapper">
+      <span class="loader"></span>
+    </div>
   </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

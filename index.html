@@ -19,203 +19,35 @@
       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       background: #fff;
       color: #1f2937;
-      line-height: 1.5
-    }
-
-    /* Layout */
-    #root {
+      line-height: 1.5;
       display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      flex-direction: column
     }
 
-    .min-h-screen {
-      min-height: 100vh
+    /* Simple Loading Spinner */
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #E5E7EB;
+      border-bottom-color: #EAB308;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
     }
 
-    .bg-white {
-      background-color: #fff
-    }
-
-    .mx-auto {
-      margin-left: auto;
-      margin-right: auto
-    }
-
-    /* Main Content Layout - Matching Layout.tsx exactly */
-    .max-w-4xl {
-      max-width: 56rem
-    }
-
-    /* Changed from 7xl to 4xl to match Layout.tsx */
-    .w-full {
-      width: 100%
-    }
-
-    .flex {
-      display: flex
-    }
-
-    .flex-col {
-      flex-direction: column
-    }
-
-    .flex-1 {
-      flex: 1 1 0%
-    }
-
-    .items-center {
-      align-items: center
-    }
-
-    .justify-center {
-      justify-content: center
-    }
-
-    /* Padding - Matching Layout.tsx */
-    .p-6 {
-      padding: 1.5rem
-    }
-
-    .pt-16 {
-      padding-top: 4rem
-    }
-
-    /* Critical for mobile menu spacing */
-
-    /* Spacing */
-    .mb-4 {
-      margin-bottom: 1rem
-    }
-
-    .mb-8 {
-      margin-bottom: 2rem
-    }
-
-    .mt-8 {
-      margin-top: 2rem
-    }
-
-    .px-2 {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem
-    }
-
-    .space-y-6> :not([hidden])~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
-    }
-
-    /* Typography */
-    .text-5xl {
-      font-size: 3rem;
-      line-height: 1;
-      font-weight: 700
-    }
-
-    .text-3xl {
-      font-size: 1.875rem;
-      line-height: 2.25rem
-    }
-
-    .text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem
-    }
-
-    .font-bold {
-      font-weight: 700
-    }
-
-    .font-semibold {
-      font-weight: 600
-    }
-
-    .text-primary {
-      color: #1F2937
-    }
-
-    .text-gray-400 {
-      color: #9ca3af
-    }
-
-    .text-gray-600 {
-      color: #4b5563
-    }
-
-    .leading-relaxed {
-      line-height: 1.625
-    }
-
-    .inline-block {
-      display: inline-block
-    }
-
-    .bg-gray-200 {
-      background-color: #e5e7eb
-    }
-
-    .rounded-md {
-      border-radius: 0.375rem
-    }
-
-    /* Responsive */
-    @media(min-width:768px) {
-      .md\:ml-64 {
-        margin-left: 16rem
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
       }
 
-      .md\:p-12 {
-        padding: 3rem
+      100% {
+        transform: rotate(360deg);
       }
-
-      .md\:pt-8 {
-        padding-top: 2rem
-      }
-
-      /* Override mobile pt-16 */
-      .md\:flex-row {
-        flex-direction: row
-      }
-
-      .md\:items-center {
-        align-items: center
-      }
-
-      .md\:gap-12 {
-        gap: 3rem
-      }
-
-      .md\:justify-end {
-        justify-content: flex-end
-      }
-
-      .md\:mt-0 {
-        margin-top: 0
-      }
-
-      .md\:min-h-\[208px\] {
-        min-height: 208px
-      }
-    }
-
-    @media(min-width:1024px) {
-      .lg\:p-16 {
-        padding: 4rem
-      }
-    }
-
-    /* Custom */
-    .min-h-\[160px\] {
-      min-height: 160px
-    }
-
-    .max-w-3xl {
-      max-width: 48rem
     }
   </style>
-
   <!-- Font Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -234,44 +66,7 @@
 
 <body>
   <div id="root">
-    <!-- Prerendered Content for Immediate LCP -->
-    <!-- Matches Layout.tsx structure exactly -->
-    <div class="flex min-h-screen bg-transparent text-text font-sans relative">
-      <!-- Sidebar Placeholder (Empty but preserves layout if needed, though fixed pos doesn't affect flow much) -->
-
-      <!-- Main Content Wrapper -->
-      <div class="flex-1 md:ml-64 flex flex-col min-h-screen">
-        <!-- Main Content Area -->
-        <main class="flex-1 p-6 pt-16 md:pt-8 md:p-12 lg:p-16 max-w-4xl mx-auto w-full">
-          <div class="max-w-3xl">
-            <div class="flex flex-col md:flex-row md:items-center md:gap-12 mb-8">
-              <div class="flex-1">
-                <h1 class="text-5xl font-bold mb-4 text-primary">
-                  Hey, I'm <span class="bg-gray-200 px-2 rounded-md inline-block">Mahmoud</span>
-                </h1>
-                <h2 class="text-3xl font-bold text-gray-400 mb-8">
-                  AI Automation & Integration Engineer
-                </h2>
-              </div>
-              <!-- Avatar Placeholder Space -->
-              <div class="flex justify-center md:justify-end mt-8 md:mt-0 min-h-[160px] md:min-h-[208px]">
-              </div>
-            </div>
-            <div>
-              <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  I am an AI Automation Engineer focused on building efficient systems. I connect tools like n8n and AI
-                  models to streamline business processes, replacing manual work with reliable automated workflows.
-                </p>
-                <p>
-                  Based in <span class="font-semibold">Cairo, Egypt</span>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
+    <span class="loader"></span>
   </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

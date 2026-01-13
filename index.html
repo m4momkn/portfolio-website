@@ -5,37 +5,243 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Critical inline CSS for immediate render -->
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#1f2937}
-    #root{display:flex;min-height:100vh}
-    .text-5xl{font-size:3rem;line-height:1;font-weight:700}
-    .text-3xl{font-size:1.875rem;line-height:2.25rem}
-    .text-lg{font-size:1.125rem;line-height:1.75rem}
-    .text-gray-600{color:#4b5563}
-    .text-gray-400{color:#9ca3af}
-    .mb-4{margin-bottom:1rem}
-    .mb-8{margin-bottom:2rem}
-    .max-w-3xl{max-width:48rem}
-    .p-8{padding:2rem}
-    @media(min-width:768px){.md\:ml-64{margin-left:16rem}}
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      color: #1f2937;
+      line-height: 1.5
+    }
+
+    /* Layout */
+    #root {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column
+    }
+
+    .min-h-screen {
+      min-height: 100vh
+    }
+
+    .bg-white {
+      background-color: #fff
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .max-w-7xl {
+      max-width: 80rem
+    }
+
+    .max-w-3xl {
+      max-width: 48rem
+    }
+
+    .p-8 {
+      padding: 2rem
+    }
+
+    .flex {
+      display: flex
+    }
+
+    .flex-col {
+      flex-direction: column
+    }
+
+    .flex-1 {
+      flex: 1 1 0%
+    }
+
+    .items-center {
+      align-items: center
+    }
+
+    .justify-center {
+      justify-content: center
+    }
+
+    /* Spacing */
+    .mb-4 {
+      margin-bottom: 1rem
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem
+    }
+
+    .mt-8 {
+      margin-top: 2rem
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem
+    }
+
+    .space-y-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+    }
+
+    /* Typography */
+    .text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 700
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem
+    }
+
+    .font-bold {
+      font-weight: 700
+    }
+
+    .font-semibold {
+      font-weight: 600
+    }
+
+    .text-primary {
+      color: #1F2937
+    }
+
+    .text-gray-400 {
+      color: #9ca3af
+    }
+
+    .text-gray-600 {
+      color: #4b5563
+    }
+
+    .leading-relaxed {
+      line-height: 1.625
+    }
+
+    .inline-block {
+      display: inline-block
+    }
+
+    .bg-gray-200 {
+      background-color: #e5e7eb
+    }
+
+    .rounded-md {
+      border-radius: 0.375rem
+    }
+
+    /* Responsive */
+    @media(min-width:768px) {
+      .md\:ml-64 {
+        margin-left: 16rem
+      }
+
+      .md\:p-12 {
+        padding: 3rem
+      }
+
+      .md\:flex-row {
+        flex-direction: row
+      }
+
+      .md\:items-center {
+        align-items: center
+      }
+
+      .md\:gap-12 {
+        gap: 3rem
+      }
+
+      .md\:justify-end {
+        justify-content: flex-end
+      }
+
+      .md\:mt-0 {
+        margin-top: 0
+      }
+
+      .md\:min-h-\[208px\] {
+        min-height: 208px
+      }
+    }
+
+    /* Custom */
+    .min-h-\[160px\] {
+      min-height: 160px
+    }
   </style>
-  
+
   <!-- Font Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" /></noscript>
-  
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" />
+  </noscript>
+
   <title>Mahmoud Elkady | AI Automation Engineer & Automation Systems Expert</title>
   <meta name="description"
     content="Discover Mahmoud Elkady, an AI Automation Engineer specializing in custom automation systems, intelligent workflows, and AI-powered business solutions. 200+ automation workflows delivered. View projects, case studies, and book a discovery call. Trusted by startups, agencies, and enterprises." />
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Prerendered Content for Immediate LCP -->
+    <div class="md:ml-64 min-h-screen bg-white">
+      <main class="p-8 md:p-12 max-w-7xl mx-auto">
+        <div class="max-w-3xl">
+          <div class="flex flex-col md:flex-row md:items-center md:gap-12 mb-8">
+            <div class="flex-1">
+              <h1 class="text-5xl font-bold mb-4 text-primary">
+                Hey, I'm <span class="bg-gray-200 px-2 rounded-md inline-block">Mahmoud</span>
+              </h1>
+              <h2 class="text-3xl font-bold text-gray-400 mb-8">
+                AI Automation & Integration Engineer
+              </h2>
+            </div>
+            <!-- Avatar Placeholder Space -->
+            <div class="flex justify-center md:justify-end mt-8 md:mt-0 min-h-[160px] md:min-h-[208px]">
+            </div>
+          </div>
+          <div>
+            <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <p>
+                I am an AI Automation Engineer focused on building efficient systems. I connect tools like n8n and AI
+                models to streamline business processes, replacing manual work with reliable automated workflows.
+              </p>
+              <p>
+                Based in <span class="font-semibold">Cairo, Egypt</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

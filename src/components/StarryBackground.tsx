@@ -1,4 +1,38 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+
+interface Particle {
+    x: number;
+    y: number;
+    size: number;
+    speedY: number;
+    color: string;
+}
+
+function createParticle(canvasWidth: number, canvasHeight: number): Particle {
+    const blueShade = Math.floor(Math.random() * 50) + 200;
+    return {
+        x: Math.random() * canvasWidth,
+        y: Math.random() * canvasHeight,
+        size: Math.random() * 2 + 0.5,
+        speedY: Math.random() * 0.5 + 0.1,
+        color: `rgba(59, 130, ${blueShade}, ${Math.random() * 0.3 + 0.1})`,
+    };
+}
+
+function updateParticle(particle: Particle, canvasWidth: number, canvasHeight: number): void {
+    particle.y += particle.speedY;
+    if (particle.y > canvasHeight) {
+        particle.y = 0 - particle.size;
+        particle.x = Math.random() * canvasWidth;
+    }
+}
+
+function drawParticle(ctx: CanvasRenderingContext2D, particle: Particle): void {
+    ctx.fillStyle = particle.color;
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+    ctx.fill();
+}
 
 const StarryBackground = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -8,6 +42,15 @@ const StarryBackground = () => {
     useEffect(() => {
         const timerId = setTimeout(() => setIsReady(true), 1000);
         return () => clearTimeout(timerId);
+    }, []);
+
+    const initParticles = useCallback((width: number, height: number): Particle[] => {
+        const count = Math.floor((width * height) / 15000);
+        const particles: Particle[] = [];
+        for (let i = 0; i < count; i++) {
+            particles.push(createParticle(width, height));
+        }
+        return particles;
     }, []);
 
     useEffect(() => {
@@ -21,73 +64,39 @@ const StarryBackground = () => {
 
         let animationFrameId: number;
         let particles: Particle[] = [];
+        let resizeTimer: ReturnType<typeof setTimeout>;
 
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            particles = initParticles(canvas.width, canvas.height);
         };
 
-        class Particle {
-            x: number;
-            y: number;
-            size: number;
-            speedY: number;
-            color: string;
-
-            constructor() {
-                this.x = Math.random() * (canvas?.width || 0);
-                this.y = Math.random() * (canvas?.height || 0);
-                this.size = Math.random() * 2 + 0.5;
-                this.speedY = Math.random() * 0.5 + 0.1;
-                const blueShade = Math.floor(Math.random() * 50) + 200;
-                this.color = `rgba(59, 130, ${blueShade}, ${Math.random() * 0.3 + 0.1})`;
-            }
-
-            update() {
-                this.y += this.speedY;
-                if (this.y > (canvas?.height || 0)) {
-                    this.y = 0 - this.size;
-                    this.x = Math.random() * (canvas?.width || 0);
-                }
-            }
-
-            draw() {
-                if (!ctx) return;
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        const init = () => {
-            particles = [];
-            const numberOfParticles = Math.floor((window.innerWidth * window.innerHeight) / 15000);
-            for (let i = 0; i < numberOfParticles; i++) {
-                particles.push(new Particle());
-            }
+        const handleResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(resizeCanvas, 150);
         };
 
         const animate = () => {
             if (!ctx || !canvas) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
+            for (const particle of particles) {
+                updateParticle(particle, canvas.width, canvas.height);
+                drawParticle(ctx, particle);
+            }
             animationFrameId = requestAnimationFrame(animate);
         };
 
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', handleResize);
         resizeCanvas();
-        init();
         animate();
 
         return () => {
-            window.removeEventListener('resize', resizeCanvas);
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(resizeTimer);
             cancelAnimationFrame(animationFrameId);
         };
-    }, [isReady]);
+    }, [isReady, initParticles]);
 
     return (
         <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">

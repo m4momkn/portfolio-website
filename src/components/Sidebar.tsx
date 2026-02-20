@@ -1,4 +1,4 @@
-import { Home, Folder, User, Mail, Wrench, Menu, X } from 'lucide-react';
+import { Home, Folder, User, Mail, Wrench, Menu, X, Briefcase } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Typewriter from './Typewriter';
 
@@ -12,6 +12,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
     const navItems = [
         { icon: Home, label: 'Home', path: '/' },
+        { icon: Briefcase, label: 'Services', path: '/services' },
         { icon: Folder, label: 'Projects', path: '/projects' },
         { icon: User, label: 'About', path: '/about' },
         { icon: Wrench, label: 'Tools', path: '/tools' },

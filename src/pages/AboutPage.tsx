@@ -1,8 +1,13 @@
 import content from '../data/content.json';
+import SEO from '../components/SEO';
 
 const AboutPage = () => {
     return (
         <div className="max-w-3xl">
+            <SEO
+                title="About"
+                description={`Learn about ${content.personal.name}, an ${content.personal.role} based in ${content.personal.location}.`}
+            />
             <div className="animate-fade-in-up">
                 <h1 className="text-5xl font-bold mb-4">{content.personal.name}</h1>
 

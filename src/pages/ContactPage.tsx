@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Mail, MapPin, Send, Calendar, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Send, Calendar, CheckCircle } from 'lucide-react';
 import content from '../data/content.json';
 import { useEmailFallback } from '../hooks/useEmailFallback';
+import SEO from '../components/SEO';
 
 const ContactEmailLink = ({ email }: { email: string }) => {
     const { showEmail, copied, handleEmailClick } = useEmailFallback(email);
@@ -30,22 +31,28 @@ const ContactPage = () => {
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus('submitting');
 
-        setTimeout(() => {
-            setStatus('success');
-            setFormState({
-                name: '',
-                email: '',
-                company: '',
-                projectType: 'Automation',
-                message: '',
-                budget: '5k-10k',
-                timeline: '1-3 months'
-            });
-        }, 2000);
+        const subject = encodeURIComponent(
+            `[Portfolio Contact] ${formState.projectType} inquiry from ${formState.name}`
+        );
+        const body = encodeURIComponent(
+            `Name: ${formState.name}\nEmail: ${formState.email}\nCompany: ${formState.company}\nProject Type: ${formState.projectType}\n\nMessage:\n${formState.message}`
+        );
+
+        window.location.href = `mailto:${content.personal.email}?subject=${subject}&body=${body}`;
+
+        setStatus('success');
+        setFormState({
+            name: '',
+            email: '',
+            company: '',
+            projectType: 'Automation',
+            message: '',
+            budget: '5k-10k',
+            timeline: '1-3 months'
+        });
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -57,6 +64,10 @@ const ContactPage = () => {
 
     return (
         <div className="max-w-5xl">
+            <SEO
+                title="Contact"
+                description="Get in touch with Mahmoud Elkady to discuss automation projects, AI integrations, or schedule a discovery call."
+            />
             <div className="animate-fade-in-up">
                 <div className="flex flex-col lg:flex-row gap-12">
 
@@ -198,18 +209,9 @@ const ContactPage = () => {
 
                                     <button
                                         type="submit"
-                                        disabled={status === 'submitting'}
-                                        className="w-full py-4 bg-black text-white font-bold rounded-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                        className="w-full py-4 bg-black text-white font-bold rounded-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2"
                                     >
-                                        {status === 'submitting' ? (
-                                            <>
-                                                <Loader2 className="animate-spin" /> Sending...
-                                            </>
-                                        ) : (
-                                            <>
-                                                Send Message <Send size={18} />
-                                            </>
-                                        )}
+                                        Send Message <Send size={18} />
                                     </button>
                                 </form>
                             )}

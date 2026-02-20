@@ -2,17 +2,17 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, TrendingUp, AlertCircle, Layers, CheckCircle, ArrowRight, Calendar } from 'lucide-react';
 import content from '../data/content.json';
 import SEO from '../components/SEO';
+import type { Project } from '../types';
 
 const CaseStudyPage = () => {
     const { id } = useParams();
-    const project = content.projects.find(p => p.id === id);
+    const project = content.projects.find(p => p.id === id) as Project | undefined;
 
     if (!project) {
         return <Navigate to="/projects" replace />;
     }
 
-    // Cast to any to access new fields without strict type checking for now
-    const p = project as any;
+    const p = project;
 
     return (
         <div className="max-w-4xl">

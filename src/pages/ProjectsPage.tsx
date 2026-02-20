@@ -1,11 +1,16 @@
 import content from '../data/content.json';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const ProjectsPage = () => {
     const projects = content.projects;
 
     return (
         <div className="max-w-5xl">
+            <SEO
+                title="Projects"
+                description="Explore Mahmoud Elkady's automation projects — from AI-powered workflows to custom business integrations."
+            />
             <div className="animate-fade-in-up">
                 <h1 className="text-4xl font-bold mb-2">Projects</h1>
                 <p className="text-gray-600 mb-12">Playground - Small MVP to Production Apps</p>

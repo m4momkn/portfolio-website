@@ -1,5 +1,6 @@
 import content from '../data/content.json';
 import { Zap, Brain, Database, Briefcase } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const ToolsPage = () => {
     const getIcon = (iconName: string) => {
@@ -14,6 +15,10 @@ const ToolsPage = () => {
 
     return (
         <div className="max-w-4xl">
+            <SEO
+                title="Tools & Tech Stack"
+                description="The technologies Mahmoud Elkady uses to build intelligent automation systems — n8n, Make.com, OpenAI, HubSpot, and more."
+            />
             <div className="animate-fade-in-up">
                 <h1 className="text-4xl font-bold mb-2">Tools & Tech Stack</h1>
                 <p className="text-gray-600 mb-12">The technologies I use to build intelligent automation systems.</p>

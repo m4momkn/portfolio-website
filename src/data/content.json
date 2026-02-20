@@ -397,6 +397,54 @@
                 "buttonText": "Book a Call"
             },
             "image": "/images/security-docs-automation.webp"
+        },
+        {
+            "id": "social-media-automation",
+            "title": "AI-Powered Social Media Automation & Buffer Publishing",
+            "subtitle": "A fully automated AI-driven system that generates, classifies, produces, and publishes branded social media content directly to Buffer.",
+            "category": "AI Automation",
+            "description": "This system uses structured AI workflows to generate non-repetitive weekly content ideas, classify each idea into the correct format (Reel, Carousel, or Single Image), generate detailed execution prompts for image and video creation, apply retry logic for AI image generation, and automatically schedule and publish posts to Buffer. The goal is to eliminate manual content planning, reduce creative bottlenecks, and create a scalable, repeatable social media pipeline.",
+            "tech": [
+                "OpenAI API",
+                "AI Image Generation",
+                "n8n",
+                "Buffer"
+            ],
+            "challenge": [
+                "AI-generated content ideas were often repetitive and lacked variety",
+                "Manual decision-making was required for content format selection",
+                "Inconsistent execution quality in AI-generated visuals",
+                "Publishing workflows were time-consuming and error-prone",
+                "No structured automation pipeline from idea generation to scheduled post"
+            ],
+            "solution": [
+                "AI Idea Generation Engine produces unique, brand-aligned weekly content concepts using structured prompt engineering and variability controls",
+                "Content Format Classifier automatically determines whether each idea should be a 20-second Reel, 5-slide Carousel, or Single Image with Caption",
+                "Creative Execution Generator transforms each idea into high-detail AI prompts tailored to the brand's visual identity",
+                "Nano Banana Image Workflow implements automated retry logic to regenerate visuals until quality and formatting criteria are met",
+                "Finalized content is formatted and published directly to Buffer for scheduling across connected platforms"
+            ],
+            "results": [
+                "Fully automated weekly content generation pipeline",
+                "Elimination of repetitive AI outputs through variability controls",
+                "Consistent content format classification and execution",
+                "Reduced manual workload from hours to minutes",
+                "Direct publishing to Buffer without human intervention",
+                "Scalable production pipeline supporting multiple platforms"
+            ],
+            "workflowDiagram": [
+                "AI Idea Generation",
+                "Format Classification",
+                "Execution Prompt Creation",
+                "Image/Video Generation",
+                "Caption Formatting",
+                "Buffer Publishing"
+            ],
+            "cta": {
+                "text": "Want to automate your social media content pipeline from idea to publish? Let's build your system.",
+                "buttonText": "Book a Call"
+            },
+            "image": "/images/social-media-automation.webp"
         }
     ],
     "about": {

@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const InteractiveAvatar = () => {
     const [showBubble, setShowBubble] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState(false);
 
     const greetings = [
         "Hey there! 👋",
@@ -16,18 +15,6 @@ const InteractiveAvatar = () => {
     const [currentGreeting] = useState(
         greetings[Math.floor(Math.random() * greetings.length)]
     );
-
-    // Preload image
-    useEffect(() => {
-        const img = new Image();
-        img.src = '/images/cartoon-avatar.webp';
-        img.onload = () => setImageLoaded(true);
-    }, []);
-
-    // Don't render anything until image is loaded
-    if (!imageLoaded) {
-        return null;
-    }
 
     return (
         <motion.div

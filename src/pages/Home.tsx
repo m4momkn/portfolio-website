@@ -1,5 +1,6 @@
 import content from '../data/content.json';
 import { lazy, Suspense } from 'react';
+import SEO from '../components/SEO';
 
 // Lazy load InteractiveAvatar (only component needing framer-motion)
 const InteractiveAvatar = lazy(() => import('../components/InteractiveAvatar'));
@@ -7,6 +8,11 @@ const InteractiveAvatar = lazy(() => import('../components/InteractiveAvatar'));
 const Home = () => {
     return (
         <div className="max-w-3xl">
+            <SEO
+                title="Mahmoud Elkady | AI Automation Engineer & Automation Systems Expert"
+                description="Discover Mahmoud Elkady, an AI Automation Engineer specializing in custom automation systems, intelligent workflows, and AI-powered business solutions."
+                keywords="Mahmoud Elkady, AI Automation Engineer, n8n expert, automation specialist"
+            />
             {/* Hero Section with Avatar */}
             <div className="flex flex-col md:flex-row md:items-center md:gap-12 mb-8">
                 {/* LCP Content - NO ANIMATION for immediate render */}

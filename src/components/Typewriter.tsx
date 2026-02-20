@@ -16,18 +16,9 @@ const Typewriter = ({
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
-    const [blink, setBlink] = useState(true);
-
-    // Blinking cursor effect
-    useEffect(() => {
-        const timeout2 = setTimeout(() => {
-            setBlink((prev) => !prev);
-        }, 500);
-        return () => clearTimeout(timeout2);
-    }, [blink]);
 
     useEffect(() => {
-        if (index === words.length) {
+        if (index >= words.length) {
             setIndex(0);
             return;
         }
@@ -52,10 +43,12 @@ const Typewriter = ({
         return () => clearTimeout(timeout);
     }, [subIndex, index, reverse, words, typingSpeed, deletingSpeed, pauseTime]);
 
+    const safeIndex = index < words.length ? index : 0;
+
     return (
         <span className="inline-block">
-            {words[index].substring(0, subIndex)}
-            <span className={`ml-1 inline-block w-0.5 h-4 bg-accent align-middle ${blink ? 'opacity-100' : 'opacity-0'}`}></span>
+            {words[safeIndex].substring(0, subIndex)}
+            <span className="ml-1 inline-block w-0.5 h-4 bg-accent align-middle animate-cursor-blink"></span>
         </span>
     );
 };

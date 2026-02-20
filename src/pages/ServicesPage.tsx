@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Workflow, Link, RefreshCw, Users, ShoppingCart, Mail, BarChart, Brain, ChevronDown, ChevronUp, CheckCircle, Bot, Image, LayoutDashboard } from 'lucide-react';
 import content from '../data/content.json';
+import SEO from '../components/SEO';
 
 const ServicesPage = () => {
     const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -29,6 +30,10 @@ const ServicesPage = () => {
 
     return (
         <div className="pt-24 pb-20 bg-background min-h-screen">
+            <SEO
+                title="Services"
+                description="Comprehensive automation solutions — from simple integrations to complex, AI-powered systems. End-to-end AI automation, CRM integration, custom agents, and more."
+            />
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16 animate-fade-in-up">
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
